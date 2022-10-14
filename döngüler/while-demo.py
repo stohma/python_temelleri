@@ -48,3 +48,5 @@ sayilar = [4, 6, 9, 10, 35, 57, 89, 125, 244]
 #
 # sayilar.sort()
 # print(sayilar)
+
+yt
