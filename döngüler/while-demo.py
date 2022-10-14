@@ -1,4 +1,4 @@
-sayilar = [4, 6, 9, 10, 35, 57, 89, 125, 244]
+# sayilar = [4, 6, 9, 10, 35, 57, 89, 125, 244]
 
 # 1: sayilar listesini while ile ekrana yazdırın
 
@@ -49,4 +49,7 @@ sayilar = [4, 6, 9, 10, 35, 57, 89, 125, 244]
 # sayilar.sort()
 # print(sayilar)
 
-yt
+# kullanıcıdan alacağınız sınırsız ürün bilgisini urunler listesi içerisine saklayınız.
+# ** ürün sayısınız kullanıcıya sorun
+# ** dictionary listesi yapısı (urunAdi, fiyat) şeklinde olsun
+# ** ürün ekleme işlemi bittiğinde ürünleri ekranda while ile listeleyin
