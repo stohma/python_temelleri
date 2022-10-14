@@ -53,3 +53,26 @@
 # ** ürün sayısınız kullanıcıya sorun
 # ** dictionary listesi yapısı (urunAdi, fiyat) şeklinde olsun
 # ** ürün ekleme işlemi bittiğinde ürünleri ekranda while ile listeleyin
+
+i=0
+adet=int(input('kaç adet ürün eklemek istiyorsunuz: '))
+urunler=[]
+
+while (i<adet):
+    urunAdi=input('ürün adı: ')
+    fiyat=input('ürün fiyatı: ')
+    urunler.append({
+        'urunAdi': urunAdi,
+        'fiyat': fiyat
+    })
+    i+=1
+
+print(urunler)
+
+# kaç adet ürün eklemek istiyorsunuz: 7
+# [{'urunAdi': 'serdar', 'fiyat': '1000'}, {'urunAdi': 'gamze', 'fiyat': '2000'}, {'urunAdi': 'ece', 'fiyat': '3000'}, {'urunAdi': 'hayat', 'fiyat': '4000'}, {'urunAdi': 'hilal', 'fiyat': '5000'}, {'urunAdi': 'bilge', 'fiyat': '6000'}, {'urunAdi': 'tohma', 'fiyat': '7000'}]
+
+for urun in urunler:
+    print(f"ürün adı: {urun['urunAdi']} ürün fiyatı: {urun['fiyat']}")
+# [{'urunAdi': 'iphone x', 'fiyat': '2000'}]
+# ürün adı: iphone x ürün fiyatı: 2000
