@@ -1,0 +1,1793 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Dec 30 07:21:51 2022
+
+@author: stohma
+"""
+
+
+from functools import reduce
+import numpy as np
+print("hi")
+
+print("1")
+
+print(22 * 2)
+
+30 * 3
+
+# Tip Dönüşümleri
+
+birinci_sayi = input()
+
+toplama_bir = input()
+toplama_iki = input()
+
+toplama_bir + toplama_iki
+int(toplama_bir) + int(toplama_iki)
+
+int(12.343)
+
+float(23)
+
+type(str(24))
+
+print("uzaya", "git", sep="**")
+
+type(4)
+
+type(3.14)
+
+"a" + "b"
+
+"9" + "1"
+
+"10" + 2
+
+a = 5
+b = 10
+c = a*b
+c
+
+degisken = 4
+print(degisken*degisken)
+
+sakla = 9
+yeni_sakla = sakla*10
+
+ifade = "selam"
+type(ifade)
+
+ifade = "gelecegi yaziyoruz"
+ifade[1]
+
+ifade = "gelecegi yaziyoruz"
+ifade[0:2]
+
+a = "bu uzun bir metindir"
+a[2:5]
+
+a = "bu uzun bir metindir"
+a[8]
+
+"9" + 1
+
+ifade = "gelecek_geldi"
+ifade.replace("i", "ı")
+
+ifade = "Merhaba!"
+ifade = ifade.lower()
+ifade = ifade.replace("!", "")
+ifade
+
+"_Python_".strip("_")
+
+ifade = "Merhaba! "
+ifade.strip(" ")
+
+
+# veri yapıları
+
+# listeler
+
+ifade = "1012340"
+ifade = ifade + "1"
+ifade.strip("1")
+
+notlar = [90, 60, 54, 12]
+type(notlar)  # ♣liste
+
+"""
+liste=[20.3,4,"gel"]
+type(liste)
+
+liste1=[20.3,4,"gel",notlar]
+type(liste1)
+len(liste1)
+liste1=[20.3,4,"gel",notlar]
+type(liste1[0])
+liste1=[20.3,4,"gel",notlar]
+type(liste1[3])
+type(liste1[2])
+listeler =[liste,liste1]
+type(listeler)
+
+"""
+
+# del fonksiyonu ile silme işlemi yapabiliyoruz
+"""
+liste=[1,2,3,4,5,6,7]
+# liste[1]
+liste[7]
+yeni_liste=["a",20.1,[1,2,3,4,5,6,7]]
+yeni_liste[4]
+yeni_liste[2][4]
+
+"""
+
+# mustafa vahit keskin 40 listeler - eleman değiştirme
+
+liste = ["ali", "bülent", "ceyhan", "çınar"]
+liste[2]
+liste[3] = "serdar"
+liste
+
+
+liste[:3] = "ömer", "kadir", "orhan"
+liste
+
+liste + ["rasim"]
+liste
+
+liste = liste + ["rasim"]
+liste
+
+del liste[1]
+liste
+
+# mustafa vahit keskin 41
+
+liste = liste + ["rasim"]
+liste
+
+dir(liste)
+
+# append & remove
+
+liste.append("bilge")
+liste
+
+
+liste.remove("bilge")
+liste
+
+# 42
+
+# insert
+
+liste
+liste.insert(0, "ece")
+liste
+
+liste.insert(7, "gamze")
+liste
+
+liste.insert(len(liste), "hayat")
+liste
+
+# pop - eleman silmek için kullanılır
+
+liste.pop(5)
+liste
+
+# 43 diğer liste metotları
+
+liste.count("rasim")  # elemanların listedeki frekanlarına erişebiliriz
+
+# copy
+
+liste_yedek = liste.copy()
+
+# extend
+
+liste.extend(["serdar", 7, "tohma"])
+liste
+
+# index - listede istediğimiz elemanın hangi sırada olduğunu gösterir
+
+liste.index("hayat")
+
+# reverse - liste elemanlarını ters çevirir
+
+liste.reverse()
+
+# sort - sıralama yapar.. ama listenin mutlaka aynı tür değişkenden oluşması gerekli
+
+liste.pop(9)
+liste
+
+liste.sort()
+liste
+
+# clear - listeyi temizler.. elemanların hepsini siler
+
+# 44 - tuple - demet -- liste üzerinde değişiklik yapılamaz
+
+t = ("ali", "veli", 1, 2, 3, 2, 2.2, [1, 2, 3, 4])
+
+t = "ali", "veli", 1, 2, 3, 2, 2.2, [1, 2, 3, 4]
+
+t[1]
+t[4] = 23  # TypeError: 'tuple' object does not support item assignment
+
+# 46 - dictionary
+
+# kapsayıcıdır, sırasızdır, değiştirilebilir
+
+sozluk = {"REG": "Regresyon Modeli",
+          "LOJ": "Lojistik Regresyon",
+          "CART": "Classification and Reg"}
+
+sozluk
+len(sozluk)
+
+sayisal_sozluk = {"ten": 10,
+                  "twenty": 20,
+                  "thirty": 30}
+
+sayisal_sozluk = {"ten": ["tn", 10],
+                  "twenty": ["twnty", 20],
+                  "thirty": ["thrty", 30]}
+sayisal_sozluk
+
+# sozluk eleman işlemleri
+
+sozluk = {"REG": "Regresyon Modeli",
+          "LOJ": "Lojistik Regresyon",
+          "CART": "Classification and Reg"}
+
+sozluk["REG"]
+
+sayisal_sozluk = {"ten": ["tn", 10],
+                  "twenty": ["twnty", 20],
+                  "thirty": ["thrty", 30]}
+sayisal_sozluk["ten"]
+
+sozluk = {"REG": {"RMSE": 10,
+                  "MSE": 20,
+                  "SSE": 30},
+          "LOJ": ["MSE", 20],
+          "CART": ["SSE", 30]}
+
+sozluk = {"REG": {"RMSE": 10,
+                  "MSE": 20,
+                  "SSE": 30},
+
+          "LOJ": {"RMSE": 10,
+                  "MSE": 20,
+                  "SSE": 30},
+
+          "CART": {"RMSE": 10,
+                   "MSE": 20,
+                   "SSE": 30}}
+
+sozluk = {"REG": {"RMSE": 10,
+                  "MSE": 11,
+                  "SSE": 12},
+
+          "LOJ": {"RMSE": 111,
+                  "MSE": 2222,
+                  "SSE": 333},
+
+          "CART": {"RMSE": 99,
+                   "MSE": 00,
+                   "SSE": 66}}
+
+
+sozluk["CART"]["SSE"]
+
+
+sozluk
+sozluk["REG"]["SSE"]
+
+# 47 sözlük- eleman ekleme- değiştirme
+
+sozluk = {"REG": "Regresyon Modeli",
+          "LOJ": "Lojistik Regresyon",
+          "CART": "Classification and Reg"}
+
+sozluk["GBM"] = "Gradient Boosting Mac"
+sozluk
+
+sozluk["REG"] = "Çoklu Doğrusal Regresyon"
+sozluk
+
+sozluk[1] = "Yapay Sinir Ağları"
+
+sozluk
+
+l = [1]
+l
+
+sozluk[l] = "yeni bir şey"
+
+t = ("tuple",)
+
+sozluk[t] = "yeni bir şey"
+sozluk
+
+# 49 veri yapıları -setler
+
+# sırasızdır,  indexlenemez
+# değerleri eşsizdir,
+# değiştirilebilirdir, farklı tipleri barındırabilir.
+
+# set oluşturma
+
+s = set()
+
+s
+
+liste = [1, "a", "se", 12]
+s = set(liste)
+s
+
+t = ("a", "ali")
+
+s = set(t)
+s
+
+ali = "lütfen_ata_bakma_uzaya_git"
+type(ali)
+
+s = set(ali)
+s
+# her bir karakter tekilleştirilerek ayrı ayrı eleman şeklinde çıktı olarak verildi
+
+l = ["ali", "lütfen", "ata", "bakma", "uzaya", "git", "git", "ali", "git"]
+l
+
+s = set(l)
+s
+
+len(s)  # 6
+
+l[0]
+
+
+# 50 - set eleman ekleme & çıkarma
+
+l = ["geleceği", "yazanlar"]
+
+s = set(l)
+s
+
+dir(s)
+
+s.add("ile")
+s
+
+s.add("geleceğe_git")
+s
+
+s.add("ile")
+s  # var olan elemanı tekrar eklemiyor
+
+s.remove("ile")
+s
+# tekrar eden elemanı silmek istediğimizde keyerror veriri. bu durumda remove kullanımında kod akışı kesilir. kod akışı kesilmesin istiyorsa discard kullanırız. böylece hata vermez
+
+s.discard("ile")
+s
+
+# 51 - setler - klasik küme işlemleri
+
+# =============================================================================
+# difference() ile iki kümenin farkını ya da "-" ifadesi
+# intersection() iki küme kesişimi ya da "&" ifadesi
+# union() iki kümenin birleşimi
+# symmetric_difference() ikisinde de olmayanları
+# =============================================================================
+
+# difference()
+
+set1 = set([1, 3, 5])
+set2 = set([1, 2, 3, 4])
+
+set1.difference(set2)  # {5}
+set2.difference(set1)  # {2, 4}
+
+set1.symmetric_difference(set2)  # {2, 4, 5}
+
+set1 - set2
+set2 - set1
+
+# 52
+
+set1.intersection(set2)  # {1, 3} veya değişim özelliğinden tersi de doğrudur
+set1 & set2
+kesisim = set1 & set2
+kesisim  # {1, 3}
+
+birlesim = set1.union(set2)  # {1, 2, 3, 4, 5} her eleman bir defa yazdırılır
+birlesim
+
+set1.intersection_update(set2)
+set1  # {1, 3} ortak eleman artık gösterilmiyor
+
+# 53 - setlerde sorgu işlemleri
+
+set1 = set([3, 4, 5])
+set2 = set([1, 2, 3, 4, 5, 6, 7, 8])
+
+# iki kümenin kesişiminin boş olup olmadığının sorgulanması
+
+set1.isdisjoint(set2)  # değer boolean döner
+
+# bir kümenin bütün elemanlarının başka bir küme içerisinde yer alıp almadığı
+
+set1.issubset(set2)  # değer boolean olarak döner
+
+# Bir kümenin bir diğer kümeyi tamamen kapsayıp kapsamadığını kontrol etmek için
+
+set2.issuperset(set1)  # değer boolean olarak döner
+
+liste = [1, 1, 2, 3, 4, 5, 1, 2, 1]
+liste.count(1)
+
+liste = [10, 20, 30, 40]
+liste.pop(1)
+liste
+
+liste = ["a", "b", "c"]
+liste.extend(liste)
+liste
+
+liste = ["a", "b", "c"]
+liste.reverse()
+liste
+
+t = ("a", 10, "b")
+t[0] = 1
+
+liste = ["a", "b", "c"]
+liste.index("b")
+
+liste = [50, 10, 30, 40]
+liste.sort()
+liste
+
+liste = [10, 10, 20, 40]
+liste.clear()
+liste
+
+# 54 - fonksiyonlara giriş ve fonksiyon okuryazarlığı
+
+# ?print
+print(1, "a", sep="_")
+
+len("a")
+
+# 55 - fonksiyon nasıl yazılır?
+
+4**2
+
+
+def kare_al(x):
+    print(x**2)
+
+
+kare_al(5)
+
+# 56 - bilgi notuyla çıktı üretmek
+
+
+def kare_al(x):
+    print("girilen sayının karesi: " + str(x**2))  # numerik
+
+
+kare_al(4)
+
+
+def kare_al(x):
+    print("girilen sayı: " +
+          str(x) +
+          ", karesi: " +
+          str(x**2))  # numerik
+
+
+kare_al(4)
+
+# 57 - iki argümanlı fonksiyon tanımlama
+
+
+def carpma_yap(x, y):
+    print(x*y)
+
+
+carpma_yap(8, 6)
+
+
+# 58 - ön tanımlı argümanlar
+
+# ?print
+
+def carpma(x, y=45):
+    print(x*y)
+
+
+carpma(8)
+carpma(123456456564636363634563463454645,
+       124141634634634634377456896765567467414141114)
+
+print("hello AI era")
+
+# Argümanların sıralaması
+
+
+def carpma(x, y=45):
+    print(x*y)
+
+
+carpma(y=4, x=67)
+
+
+# 59 - ne zaman fonksiyon yazılır
+
+# sicaklik, nem, sarj sokak lambasının  sırasıyla değerleri 40,25 ve 90 olsun
+
+def direk_hesap(sicaklik, nem, sarj):
+    print((sicaklik + nem)/sarj)
+
+
+direk_hesap(62, 88, 91)
+
+
+# 60- fonksiyon çıktılarını girdi olarak kullanmak : return
+
+def direk_hesap(sicaklik, nem, sarj):
+    print((sicaklik + nem)/sarj)
+
+
+direk_hesap(62, 88, 86)
+
+cikti = direk_hesap(62, 88, 86)
+cikti
+print(cikti)
+direk_hesap(15, 87, 99)*9
+
+
+def direk_hesap(sicaklik, nem, sarj):
+    return (sicaklik*nem)/sarj
+
+
+direk_hesap(23, 45, 90)
+direk_hesap(15, 87, 99)*9
+cikti = direk_hesap(23, 45, 90)
+cikti
+print(cikti)
+
+
+# 61 - local ve global değişkenler
+
+x = 10
+y = 20  # burası global değişken
+
+
+def carpma_yap(x, y):  # burası local değişken
+    return x*y
+
+
+carpma_yap(43, 98)
+carpma_yap(x, y)
+
+
+# 62 - local etki alanından global etki alanını değiştirmek
+
+x = 10
+y = 20  # burası global değişken
+
+
+# burası local değişken. global değişkenler daha kapsayıcı olduğundan x=5 desek de değer atanmayacaktır.
+def carpma_yap(x=5, y=7):
+    return x*y
+
+
+carpma_yap(43, 98)
+carpma_yap(x, y)
+
+x = []
+
+
+def eleman_ekle(y):
+    x.append(y)
+    print(str(y) + " ifadesi eklendi")
+
+# python önce local etki alanındax değerine bakar bulamazsa global etki alanına bakacak ve değeri yazdıracaktır.
+
+
+eleman_ekle("ece")
+eleman_ekle("bilge")
+
+# x.append(1)
+x
+
+del x
+
+
+def eleman_ekle(y):
+    x.append(y)
+    print(str(y) + " ifadesi eklendi")
+
+
+x
+
+
+# 63 - true - false sorgulamaları - karar yapıları
+
+sinir = 500  # sınır
+
+sinir == 4000  # false. == mi demektir. yani sinir 4000 mi?
+sinir == 500  # true
+
+
+# 64 - if
+
+sinir = 50000
+gelir = 40000
+gelir < sinir
+if gelir < sinir:
+    print("gelir sınırdan küçük. mağaza kapanabilir")
+    print(gelir*2)
+
+if gelir > sinir:
+    print("gelir sınırdan büyük")
+
+
+# 65 - else
+
+sinir = 50000
+gelir = 40000
+
+if gelir > sinir:
+    print("gelir sınırdan büyük")
+else:
+    print("gelir sınırdan küçük")
+
+sinir = 50000
+gelir = 50000
+
+if gelir >= sinir:
+    print("gelir sınıra eşit veya sınırdan büyük")
+else:
+    print("gelir sınırdan küçük")
+
+sinir = 50000
+gelir = 50000
+
+if gelir == sinir:
+    print("gelir sınıra eşit")
+if gelir > sinir:
+    print("gelir sınırdan büyük")
+else:
+    print("gelir sınırdan küçük")
+
+
+# 66 - elif
+
+sinir = 50000
+gelir1 = 60000
+gelir2 = 50000
+gelir3 = 40000
+
+if gelir1 > sinir:
+    print("tebrikler, hediye kazandınız")
+elif gelir1 < sinir:
+    print("uyarı!")
+else:
+    print("ortalama durumdasınız, günü kurtardınız")
+
+if gelir2 > sinir:
+    print("tebrikler, hediye kazandınız")
+elif gelir2 < sinir:
+    print("uyarı!")
+else:
+    print("ortalama durumdasınız, günü kurtardınız")
+
+if gelir3 > sinir:
+    print("tebrikler, hediye kazandınız")
+elif gelir3 < sinir:
+    print("uyarı!")
+else:
+    print("ortalama durumdasınız, günü kurtardınız")
+
+
+# 67 - if ve input ile kullanıcı etkileşimli program
+
+sinir = 50000
+magaza_adi = input("Mağaza adı nedir?")
+gelir = int(input("Gelirinizi giriniz: "))
+
+if gelir > sinir:
+    print("tebrikler: " + magaza_adi + " promosyon kazandınız!")
+elif gelir < sinir:
+    print("Uyarı! çok düşük gelir: " + str(gelir))
+else:
+    print("Takibe devam")
+
+
+# 68 - for döngüsü
+
+ogrenci = ["ece", "bilge", "gamze", "serdar"]
+
+ogrenci[0]
+
+for i in ogrenci:
+    print(i)
+
+
+# 69 - for loops örnek
+
+maaslar = [1000, 2000, 3000, 4000, 5000]
+
+for i in maaslar:
+    print(i*23)
+
+
+# 70 - döngü ve fonksiyonların birlikte kullanımı
+
+def kare_al(x):
+    print(x**2)
+
+
+kare_al(5)
+
+maaslar = [1000, 2000, 3000, 4000, 5000]
+
+for i in maaslar:
+    print(i)
+
+# maaşlara %20 zam yapılacak. gerekli kodları yazınız
+
+maaslar[3]*20/100 + maaslar[3]
+
+for i in maaslar:
+    print(i + i*20/100)  # veya
+
+for i in maaslar:
+    print(i*1.2)
+
+
+def yeni_maas(x):
+    print(x)
+
+
+yeni_maas(4)
+
+
+def yeni_maas(x):
+    print(x*20/100 + x)
+
+
+for i in maaslar:
+    yeni_maas(i)
+
+
+# 71 - if, for ve fonksiyonların kullanımı
+
+maaslar = [1000, 2000, 3000, 4000, 5000]
+
+
+def maas_ust(x):
+    print(x*1.1)
+
+
+def maas_alt(x):
+    print(x*1.2)
+
+
+for i in maaslar:
+    if i >= 3000:
+        maas_ust(i)
+    else:
+        maas_alt(i)
+
+
+# 72 - break & continue
+
+maaslar = [8000, 2000, 1000, 3000, 6000, 4000, 1000, 5000]
+
+dir(maaslar)
+
+maaslar.sort()
+maaslar
+
+for i in maaslar:
+    if i == 3000:
+        print("kesildi")
+        break
+    print(i)
+
+for i in maaslar:
+    if i == 3000:
+        continue
+    print(i)
+
+
+# 73 - while
+
+sayi = 1
+
+while sayi < 10:
+    sayi += 1
+    print(sayi)
+
+
+def kup_al(x):
+    print(x**3)
+
+
+kup_al(2)
+
+
+def yazdir(metin):
+    print(metin, "yazanlar")
+
+
+yazdir("gelecegi")
+
+
+def islem(x, y):
+    print(x + y)
+
+
+islem(1, 9)
+
+
+def islem(x, y):
+    print(x - y)
+
+
+islem(3)
+
+
+def harf_say(x):
+    len(x)
+
+
+harf_say("Merhaba!")
+
+
+def islem(x):
+    if (x < 0):
+        return "NO"
+    else:
+        x*5
+
+
+islem(2)
+
+
+def islem(x):
+    if (x > 10):
+        return "YES"
+    else:
+        return x*5
+
+
+islem(4)
+
+
+a = [2, 4, 6, 8]
+
+for i in a:
+    print(i**2)
+
+
+sayilar = [10, 20, 30]
+
+for i in sayilar:
+    if i > 20:
+        print(i/2)
+
+
+urun_fiyatlari = [19, 29, 39]
+
+for i in urun_fiyatlari:
+    if i >= 30:
+        print(i/2)
+    else:
+        print(i*0)
+
+
+a = [1, 2, 3]
+b = []
+for i in a:
+    b.append(i**2)
+
+b
+
+
+def mesaj():
+    print("Merhaba!")
+
+
+mesaj()
+
+
+for i in ["a", 11]:
+    print(i)
+
+
+def harf_say(x):
+    return len(x)
+
+
+harf_say("Merhaba!")
+
+
+sayilar = [10, 20, 30, 40]
+
+for i in sayilar:
+    if i == 30:
+        break
+    print(i)
+
+
+A = []
+
+for i in [1, 2, 3, 4]:
+    A.append(i)
+
+A[0]
+
+
+if [1, 2, 3, 4][2] == 2:
+    print("YES")
+else:
+    print("NO")
+
+
+if [1, 2, 3, 4][1] == 2:
+    print("YES".lower())
+else:
+    print("NO")
+
+
+A = "*A*"
+if type(A) == str:
+    A = A.strip("*")
+    print(A)
+
+
+A = 12
+
+if type(A) == str:
+    A = A.strip("*")
+    print(A)
+else:
+    A = "*" + str(A) + "*"
+    print(A.strip())
+
+
+A = []
+B = []
+
+for i in [1, "a", 12, "b"]:
+    if type(i) == int:
+        B.append(i)
+    else:
+        A.append(i)
+
+A[1]
+
+
+def islem(x, y):
+    A = [x, y]
+    return A[0] + A[1]
+
+
+islem(1, 3)
+
+
+# 74 - sınıflara giriş ve sınıf (class) ları tanımlamak
+
+# class
+
+class VeriBilimci():
+    print("bu bir sınıftır")
+
+
+# 75 - sınıf özellikleri (class attributes)
+
+class VeriBilimci():
+    bolum = ''
+    sql = 'Evet'
+    deneyim_yili = 0
+    bildigi_diller = []
+
+
+VeriBilimci.bolum
+VeriBilimci.sql
+
+# sınıfların özelliklerini değiştirmek
+
+VeriBilimci.sql = "Hayır"
+VeriBilimci.sql
+
+
+# 76 - sınıf örneklendirmesi (instantiation)
+
+ali = VeriBilimci()
+ali.sql
+ali.deneyim_yili
+ali.bolum
+ali.bildigi_diller.append("Python")
+ali.bildigi_diller
+
+veli = VeriBilimci()
+veli.sql
+veli.bildigi_diller
+
+
+# 77 - örnek özellikleri
+
+class VeriBilimci():
+    def __init__(self):
+        self.bildigi_diller = []
+
+
+ali = VeriBilimci()
+ali.bildigi_diller
+
+veli = VeriBilimci()
+veli.bildigi_diller
+
+ali.bildigi_diller.append("Python")
+ali.bildigi_diller
+
+veli.bildigi_diller
+veli.bildigi_diller.append("R")
+veli.bildigi_diller
+
+VeriBilimci.bildigi_diller
+
+
+class VeriBilimci():
+    bildigi_diller = ["R", "Python"]
+
+    def __init__(self):
+        self.bildigi_diller = []
+
+
+ali = VeriBilimci()
+ali.bildigi_diller
+
+veli = VeriBilimci()
+veli.bildigi_diller
+
+ali.bildigi_diller.append("Python")
+ali.bildigi_diller
+
+veli.bildigi_diller
+veli.bildigi_diller.append("R")
+veli.bildigi_diller
+
+VeriBilimci.bildigi_diller
+
+
+class VeriBilimci():
+    bolum = ''
+    sql = ''
+    deneyim_yili = 0
+    bildigi_diller = ["R", "Python"]
+
+    def __init__(self):
+        self.bildigi_diller = []
+        self.bolum = ''
+# self örnekleri temsil eder. istenilirse yerine farklı yazı da yazılabilir ama şablon bu şekilde.
+
+
+ali = VeriBilimci()
+ali.bildigi_diller
+
+veli = VeriBilimci()
+veli.bildigi_diller
+
+ali.bildigi_diller.append("Python")
+ali.bildigi_diller
+
+veli.bildigi_diller
+veli.bildigi_diller.append("R")
+veli.bildigi_diller
+
+VeriBilimci.bildigi_diller
+ali.bolum
+
+VeriBilimci.bolum
+ali.bolum = "istatistik"
+VeriBilimci.bolum
+veli.bolum
+veli.bolum = "end_muh"
+veli.bolum
+ali.bolum
+VeriBilimci.bolum
+
+
+# 78 - örnek metotları
+
+class VeriBilimci():
+    calisanlar = []
+
+    def __init__(self):
+        self.bildigi_diller = []
+        self.bolum = ''
+
+    def dil_ekle(self, yeni_dil):
+        self.bildigi_diller.append(yeni_dil)
+
+# bir sınıf tanımladık. calisanlar adında nesne oluşturduk. örneklerin özellikleri tanımlandı. kişinin yeni dil öğrenmesi durumunu fonksiyonla tanımlayalım ve bu tanımlama class altında olsun.
+
+
+ali = VeriBilimci()
+ali.bildigi_diller
+ali.bolum
+
+veli = VeriBilimci()
+veli.bildigi_diller
+veli.bolum
+
+dir(VeriBilimci())
+
+VeriBilimci().dil_ekle()
+
+ali.dil_ekle("R")
+ali.bildigi_diller
+
+veli.dil_ekle("Python")
+veli.bildigi_diller
+
+
+# 79 - inheritance
+
+class Employees():
+    def __init__(self):
+        self.FirstName = ""
+        self.LastName = ""
+        self.Address = ""
+
+
+class DataScience(Employees):
+    def __init__(self):
+        self.Programming = ""
+
+
+veribilimci1 = DataScience()
+veribilimci1
+
+
+class Marketing(Employees):
+    def __init__(self):
+        self.StoryTelling = ""
+
+
+mar1 = Marketing()
+mar1
+
+
+# 80 - fonksiyonel programlamaya giriş
+
+# =============================================================================
+# ctrl + 4 ile çoklu satırları yorum satırı yapıp çerçeve içerisine alabiliyoruz
+# Python'da fonksiyonel programlama
+# (birinci sınıf nesnelerdir)
+# yan etkisiz fonksiyonlardır: stateless, girdi-çıktı
+# yüksek seviye fonksiyonlardır
+# vektörel operasyonlar
+# =============================================================================
+
+# 80 - yan etkisiz fonksiyonlar (pure)
+
+# örnek:  yan etki / bağımsızlık
+a = 5
+
+
+def impure_sum(b):
+    return b + a
+
+
+def pure_sum(a, b):
+    return a + b
+
+
+impure_sum(6)
+
+
+a = 7
+
+
+def impure_sum(b):
+    return b + a
+
+
+def pure_sum(a, b):
+    return a + b
+
+
+impure_sum(6)
+
+pure_sum(3, 4)
+
+# 81- yan etkisiz fonksiyonlar
+
+# örnek: ölümcül yan etkiler
+# oop
+
+
+class LineCounter:
+    def __init__(self, filename):
+        self.file = open(filename, 'r')
+        self.lines = []
+
+    def read(self):
+        self.lines = [line for line in self.file]
+
+    def count(self):
+        return len(self.lines)
+
+
+lc = LineCounter('deneme.txt')
+
+print(lc.lines)
+print(lc.count())
+
+lc.read()
+
+print(lc.lines)
+print(lc.count())
+
+
+# fonksiyonel programlama
+# işlemleri daha hızlı ve az satırla ve de istatistik gibi kullanımlarda fonksiyonel programlamayı kullanacağız
+
+def read(filename):
+    with open(filename, 'r') as f:
+        return [line for line in f]
+
+
+def count(lines):
+    return len(lines)
+
+
+example_lines = read('deneme.txt')
+lines_count = count(example_lines)
+lines_count
+
+
+# 83 - isimsiz fonksiyonlar (anonymus functions)
+
+def old_sum(a, b):
+    return a + b
+
+
+old_sum(2, 9)
+
+
+def new_sum(a, b): return a + b
+
+
+new_sum(9, 4)
+
+sirasiz_liste = [('b', 3), ('a', 4), ('d', 42), ('c', 2)]
+sirasiz_liste
+
+sorted(sirasiz_liste, key=lambda x: x[1])
+
+
+# 84 - vektörel operasyonlar (vectorel operations)
+
+a = [1, 2, 3, 4]
+b = [2, 3, 4, 5]
+
+ab = []
+
+# a ile b yi çarpalım
+range(0, len(a))
+
+for i in range(0, len(a)):
+    print(i)
+
+for i in range(0, len(a)):
+    ab.append(a[i] * b[i])
+ab
+
+# fonksiyonel programlama şekli ile aynı işlemi yapalım
+
+a = np.array([1, 2, 3, 4])
+b = np.array([2, 3, 4, 5])
+
+a*b
+
+
+# 85 - map & filter & reduce fonksiyonları
+
+liste = [1, 2, 3, 4, 5]
+
+# listenin her elemanına 10 eklemek isteyelim
+
+for i in liste:
+    print(i + 10)
+
+# veya
+# lambda isimsiz bir fonksiyondur. verilen bir nesnenin üzerinde tanımlanacak bir fonk çalıştırma imkanı verir. listenin her elemanına tanımlanan işlemi uyguladı
+# map ise vektörel fonksiyon yapacak nitelikte rol aldı
+
+list(map(lambda x: x + 10, liste))
+
+
+# filter
+
+liste = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# cift_sayilar ı bulalım
+
+list(filter(lambda x: x % 2 == 0, liste))  # [2, 4, 6, 8, 10]
+
+a = [1, 2, 3]
+list(map(lambda x: x*2, a))
+
+
+# reduce
+
+
+liste = [1, 2, 3, 4, 5]
+
+# listedeki elemanların toplamını yazdıralım
+reduce(lambda a, b: a+b, liste)
+
+
+# 86 - modül oluşturmak
+
+# farklı bir HesapModulu sayfası oluşturup o sayfada oluşturduğumuz formülü başka bir sayfada kullanabiliyoruz. tabi farklı formülleri de aynı şekilde uygulamaya alabiliriz.
+# modüller amacımıza göre farklı kütüphanelerdir diyebiliriz.
+
+
+# 87 - hatalar / istisnalar (exceptions)
+
+a = 9
+b = 0
+
+a/b
+
+try:
+    print(a/b)
+except ZeroDivisionError:
+    print("paydada 0 olmamalı")
+
+# tip hatası TypeError
+
+a = 9
+b = "2"
+
+a/b
+
+try:
+    print(a/b)
+except TypeError:
+    print("sayı ve string problemi")
+
+
+a = [1, 2, 3, 4]
+reduce(lambda a, b: a*b, a)
+
+
+A = [[1, 2], [3, 4], [5, 6]]
+list(map(lambda x: x[0]*3, A))
+
+
+liste = [1, 2, 3, 4]
+A = []
+
+for i in liste:
+    A.append(i**2)
+
+print(A)
+
+list(map(lambda x: x**2, liste))
+
+
+A = [1, 2, 3, 4, 5]
+
+if type(A) == ():
+    print("islem gecersiz")
+else:
+    print(list(map(lambda x: x/1, A)))
+
+
+reduce(lambda a, b: a/b, [8, 4, 2])
+
+
+def yap(x, y, z):
+    try:
+        print(x/y*z)
+    except ZeroDivisionError:
+        print("gecersiz islem")
+
+
+yap(1, 2, 0)
+
+
+a = np.array([1, 1, 1])
+b = np.array([2])
+
+a+b
+
+
+A = []
+
+for i in ["ali", "veli", "isik"]:
+    A.append(i.replace("i", "a"))
+
+print(A)
+
+
+list(filter(lambda x: x < 2, [1, 2, 3, 4, 5]))
+
+
+liste = ["a", 20, 10, 30, "b"]
+list(filter(lambda x: type(x) == int, liste))
+
+
+list(filter(lambda x: len(x) > 8, [
+     "pazartesi", "sali", "carsamba", "persembe", "cuma"]))
+
+
+list(map(lambda x: x.capitalize(), ["abc", "bcd", "cde"]))
+
+
+reduce(lambda a, b: a+b, ["a", "4", "a"])
+
+
+A = ["ali", "veli", "isik"]
+B = [1, 2, 3]
+AB = [A, B]
+
+
+for i in AB:
+    if type(i[0]) == int:
+        print(list(map(lambda x: x-3, i)))
+
+
+list(map(lambda x: x/10, filter(lambda x: x > 20, [10, 20, 30, 40, 50])))
+
+
+A = ["ali", "veli", "isik"]
+B = [1, 2, 3]
+AB = [A, B]
+
+for i in AB:
+    if type(i[0]) == str:
+        print(list(map(lambda x: x + " hi", i)))
+
+
+A = ["Veri", "Bilimi", "Okulu"]
+reduce(lambda a, b: a+b, list(map(lambda x: x[0], A)))
+
+
+# 88 - python ile veri manipülasyonu numpy ve pandas
+
+
+# 89 - jupyterlab
+
+a = [1, 2, 3, 4]
+b = [2, 3, 4, 5]
+
+ab = []
+
+for i in range(0, len(a)):
+    ab.append(a[i] * b[i])
+
+ab
+
+
+# 91 - neden numPy
+
+# aynı işlemi aşağıdaki gibi daha kolay yoldan yapabiliriz. döngü kullnmya gerek kalmadan çözmüş oluyoruz.
+
+# numpy ile daha kısa ve analitik anlamda üst seviyeden soruları çözebiliriz ve maliyeti de düşük. ayrıca az da yer tutuyor
+# veri saklam anlamında da ciddi performans katkısı oluyor
+
+
+a = np.array([1, 2, 3, 4])
+b = np.array([2, 3, 4, 5])
+
+ab
+
+
+# 92 - NumPy array oluşturmak
+
+
+np.array([1, 2, 3, 4, 5, 6])
+a = np.array([1, 2, 3, 4, 5, 6])
+type(a)  # numpy.ndarray ???
+
+np.array([3.14, 4, 3, 31])  # array([ 3.14,  4.  ,  3.  , 31.  ])
+
+np.array([3.14, 4, 3, 31], dtype="float32")
+
+np.array([3.14, 4, 3, 31], dtype="int")  # array([ 3,  4,  3, 31])
+
+
+# sıfırdan array oluşturma
+
+# array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) bu array tek satırdan oluştuğundan tek boyutlu iken şğıdaki arraylar 2 boyutludur
+np.zeros(10, dtype=int)
+
+np.ones((4, 4))
+# array([[1., 1., 1., 1.],
+#       [1., 1., 1., 1.],
+#       [1., 1., 1., 1.],
+#       [1., 1., 1., 1.]]) bu şekilde 4*4lük bir dizi oluşturmuş oluyoruz
+
+np.ones((4, 4), dtype=int)
+# array([[1, 1, 1, 1],
+#        [1, 1, 1, 1],
+#        [1, 1, 1, 1],
+#        [1, 1, 1, 1]])
+
+np.full((2, 6), 5)
+# array([[5, 5, 5, 5, 5, 5],
+#        [5, 5, 5, 5, 5, 5]])
+
+
+# doğrusal array
+
+np.arange(0, 22, 6)
+#  array([ 0,  6, 12, 18])
+
+
+np.linspace(0, 1, 10)
+# array([0.        , 0.11111111, 0.22222222, 0.33333333, 0.44444444,
+#        0.55555556, 0.66666667, 0.77777778, 0.88888889, 1.        ])
+
+np.random.normal(6, 4, (2, 5))
+# array([[ 3.92340506,  1.96630669,  3.110142  ,  3.86408736,  5.8188593 ],
+#        [ 3.67577607,  2.14792712, 12.21381483,  9.10567189,  2.6213913 ]])
+
+np.random.randint(0, 8, (3, 4))
+
+# array([[1, 1, 7, 2],
+#        [3, 0, 7, 7],
+#        [6, 6, 4, 6]])
+
+
+# 93 - NumPy array özellikleri
+
+# array([5, 0, 6, 0, 2, 0, 2, 7, 3, 9]) random dizi getirdi
+np.random.randint(10, size=10)
+
+a = np.random.randint(10, size=10)
+a.ndim  # 1 -tek boyutlu array olduğundan 1 değeri geldi
+a.shape  # boyut bilgisini verir: (10,)
+a.size  # toplam eleman sayısnı verir: 10
+a.dtype  # dizi tipini verir: dtype('int32')
+
+# iki boyutlu array oluşturalım
+b = np.random.randint(10, size=(4, 5))
+b
+# array([[6, 8, 9, 9, 8],
+#        [5, 0, 5, 3, 9],
+#        [8, 6, 2, 8, 2],
+#        [4, 7, 3, 9, 2]])
+b.ndim  # 2
+b.shape  # (4, 5)
+b.size  # 20
+b.dtype  # dtype('int32')
+
+
+# 94 - yeniden şekillendirme (reshaping)
+
+np.arange(1, 10)  # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+np.arange(1, 10).reshape((3, 3))
+# array([[1, 2, 3],
+#        [4, 5, 6],
+#        [7, 8, 9]])
+
+a = np.arange(1, 10)
+a
+# 1 - tek boyutlu array bir vektör çok boyutlular ise matris olarak adlandırılır.
+a.ndim
+# array([[1, 7, 1, 1, 6, 3, 5, 1, 1, 1]]) dikkat edilirse çift [[]] köşeli parantezden oluşuyor. dolayısıyla burası aslında bir matristir.
+b = a.reshape((1, 9))
+
+b.ndim  # 2 - 2 boyutlu yani matris
+
+
+# 95 - Array birleştirme (concatenation)
+
+x = np.array([1, 2, 3])
+y = np.array([4, 5, 6])
+
+np.concatenate([x, y])  # array([1, 2, 3, 4, 5, 6])
+
+z = np.array([7, 8, 9])
+
+np.concatenate([x, y, z])  # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+# 2 boyutlu array birleştirme
+
+a = np.array([[1, 2, 3],
+              [4, 5, 6]])
+
+np.concatenate([a, a])
+# array([[1, 2, 3],
+#        [4, 5, 6],
+#        [1, 2, 3],
+#        [4, 5, 6]])
+
+np.concatenate([a, a], axis=1)
+# array([[1, 2, 3, 1, 2, 3],
+#        [4, 5, 6, 4, 5, 6]]) - axis=1 yapısı ile x ekseninde birleştirme yaparak yazdırdı. üstteki örnekte axis=0 değeri default olduğundan 4 satırda yazdırmıştı.
+
+
+# 96 - array ayırma (splitting)
+
+x = np.array([1, 2, 3, 44, 44, 3, 2, 1])
+
+np.split(x, [3, 5])  # [array([1, 2, 3]), array([44, 44]), array([3, 2, 1])]
+
+a, b, c = np.split(x, [3, 5])
+a  # array([1, 2, 3])
+b  # array([44, 44])
+c  # array([3, 2, 1])
+
+# 2 boyutlu array ayırma
+m = np.arange(16).reshape(4, 4)
+m
+# array([[ 0,  1,  2,  3],
+#        [ 4,  5,  6,  7],
+#        [ 8,  9, 10, 11],
+#        [12, 13, 14, 15]])
+
+np.vsplit(m, [2])
+# [array([[0, 1, 2, 3],
+#         [4, 5, 6, 7]]),
+#  array([[ 8,  9, 10, 11],
+#         [12, 13, 14, 15]])]
+
+ust, alt = np.vsplit(m, [2])
+ust
+# array([[0, 1, 2, 3],
+#        [4, 5, 6, 7]])
+alt
+# array([[ 8,  9, 10, 11],
+#        [12, 13, 14, 15]])
+
+np.hsplit(m, [2])
+# [array([[ 0,  1],
+#         [ 4,  5],
+#         [ 8,  9],
+#         [12, 13]]),
+#  array([[ 2,  3],
+#         [ 6,  7],
+#         [10, 11],
+#         [14, 15]])] - dikey olarak bölme işlemi
+
+sag, sol = np.hsplit(m, [2])
+sag
+# array([[ 0,  1],
+#        [ 4,  5],
+#        [ 8,  9],
+#        [12, 13]])
+
+sol
+# array([[ 2,  3],
+#        [ 6,  7],
+#        [10, 11],
+#        [14, 15]])
+
+
+# 97 - array sıralama (sorting)
+
+v = np.array([3, 8, 1, 5, 2, 6, 4])
+v  # array([3, 8, 1, 5, 2, 6, 4])
+
+np.sort(v)  # array([1, 2, 3, 4, 5, 6, 8])
+
+# ölümcül yan etki: istersek sıralamayı v.sort() fonksiyonu ile de yapabilirdik. ama bu dizinin yapısını kalıcı olarak değiştirecekti. numpy ile çağrıldığında verinin orijinal yapısını bozmadan array ı çağırdık
+
+# 2 boyutlu array sıralama
+
+m = np.random.normal(10, 5, (3, 3))
+m
+# array([[ 2.81902006, 22.12760533, 15.15634965],
+#        [ 6.1959886 , 20.84338643,  4.12425273],
+#        [ 5.15961318, 14.28272928,  5.54646832]])
+
+np.sort(m, axis=1)
+# array([[ 2.81902006, 15.15634965, 22.12760533],
+#        [ 4.12425273,  6.1959886 , 20.84338643],
+#        [ 5.15961318,  5.54646832, 14.28272928]]) - satırlara göre sıralama
+
+np.sort(m, axis=0)
+# array([[ 2.81902006, 14.28272928,  4.12425273],
+#        [ 5.15961318, 20.84338643,  5.54646832],
+#        [ 6.1959886 , 22.12760533, 15.15634965]]) - sütunlara göre sıralama
+
+
+# 98 - index ile elemanlara erişmek
+
+a = np.random.randint(10, size=10)
+a  # array([6, 2, 1, 7, 0, 2, 7, 6, 5, 7])
+
+# yukarıdaki array ın ilk verisini değiştirelim
+a[0] = 12
+a  # array([12,  2,  1,  7,  0,  2,  7,  6,  5,  7])
+
+# 2 boyutlu array da yapalım
+m = np.random.randint(10, size=(3, 4))
+m
+# array([[1, 3, 6, 1],
+#        [3, 3, 0, 6],
+#        [8, 0, 2, 4]])
+m[0, 0]  # 1
+m[1, 2]  # 0
+m[1, 2] = 7
+m
+# array([[1, 3, 6, 1],
+#        [3, 3, 7, 6],
+#        [8, 0, 2, 4]])
+
+m[1, 1] = 2.2
+m
+# array([[1, 3, 6, 1],
+#        [3, 2, 7, 6],
+#        [8, 0, 2, 4]]) - değerler integer olduğundan float değer gönderildiğinde sadece tamsayı değerinin atamasını yapar
+
+
+# 99 - slicing ile elemanlara erişmek (array alt kümesine erişmek)
+
+a = np.arange(20, 30)
+a  # array([20, 21, 22, 23, 24, 25, 26, 27, 28, 29])
+
+a[:3]  # array([20, 21, 22])
+
+a[4:9]  # array([24, 25, 26, 27, 28])
+a[2::3]  # array([22, 25, 28])
+
+# 2 boyutlu slice işlemleri
+m = np.random.randint(10, size=(3, 4))
+m
+# array([[3, 1, 8, 5],
+#        [8, 6, 3, 7],
+#        [2, 3, 6, 8]])
+
+m[:, 0]  # m[: satır, sütun] - array([3, 8, 2])
+
+m[:1, ]  # array([[3, 1, 8, 5]]) - formatı hatalı girdiğimden 0. sütunu getirdi
+m[1, :]  # array([8, 6, 3, 7]) # 1. sütunu getirir
+
+m[0:2, :4]
+# array([[3, 1, 8, 5],
+#        [8, 6, 3, 7]])
+
+m[::, :2]
+# array([[3, 1],
+#        [8, 6],
+#        [2, 3]])
+
+m[1:3, :2]
+# array([[8, 6],
+#        [2, 3]])
+
+
+# 100 - alt küme üzerinde işlem yapmak
+
+a = np.random.randint(10, size=(4, 4))
+a
+# array([[8, 4, 6, 8],
+#        [8, 1, 0, 8],
+#        [4, 0, 5, 4],
+#        [0, 0, 6, 0]])
+
